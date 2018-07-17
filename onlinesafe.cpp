@@ -15,7 +15,7 @@ string  getDesktopPath()
     if (SUCCEEDED(SHGetMalloc(&pShellMalloc)))
     {
         if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, CSIDL_DESKTOP, &pidl))) {
-            // Èç¹û³É¹¦·µ»Øtrue  
+            // å¦‚æœæˆåŠŸè¿”å›true  
             SHGetPathFromIDListA(pidl, szDir);
             pShellMalloc->Free(pidl);
         }
@@ -72,60 +72,53 @@ int removeDir(string dirPath){
 				else
 				{
 					//not folder, delete it. if empty folder, using _rmdir istead.
-					if(path.find("²¡¶¾")!=path.npos){
-						string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ Î´Öª)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
-						if(ret == IDYES){
-							remove(path.c_str());
-						}
-					}
-					if(path.find("360")!=path.npos&&(path.find(".exe")!=path.npos||path.find(".dll")!=path.npos||path.find(".dat")!=path.npos||path.find(".sys")!=path.npos||path.find(".bin")!=path.npos)){
-						string j="¼ì²âµ½Ò»¸öº¬ÓĞÆÛÕ©ÓÃ»§ĞĞÎªµÄ³ÌĞò(Î£ÏÕµÈ¼¶ µÍ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+					if(path.find("ç—…æ¯’")!=path.npos){
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ æœªçŸ¥)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
 					}
 					if(path.find("ludashi")!=path.npos){
-						string j="¼ì²âµ½Ò»¸öº¬ÓĞÆÛÕ©ÓÃ»§ĞĞÎªµÄÁ÷Ã¥³ÌĞò(Î£ÏÕµÈ¼¶ ¼«¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªå«æœ‰æ¬ºè¯ˆç”¨æˆ·è¡Œä¸ºçš„æµæ°“ç¨‹åº(å±é™©ç­‰çº§ æé«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
-					}if(path.find("Â³´óÊ¦")!=path.npos){
-						string j="¼ì²âµ½Ò»¸öº¬ÓĞÆÛÕ©ÓÃ»§ĞĞÎªµÄÁ÷Ã¥³ÌĞò(Î£ÏÕµÈ¼¶ ¼«¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+					}if(path.find("é²å¤§å¸ˆ")!=path.npos){
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªå«æœ‰æ¬ºè¯ˆç”¨æˆ·è¡Œä¸ºçš„æµæ°“ç¨‹åº(å±é™©ç­‰çº§ æé«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
 					}if(path.find("LDSLite")!=path.npos){
-						string j="¼ì²âµ½Ò»¸öº¬ÓĞÆÛÕ©ÓÃ»§ĞĞÎªµÄÁ÷Ã¥³ÌĞò(Î£ÏÕµÈ¼¶ ¼«¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªå«æœ‰æ¬ºè¯ˆç”¨æˆ·è¡Œä¸ºçš„æµæ°“ç¨‹åº(å±é™©ç­‰çº§ æé«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
 					}if(path.find("ComputerZLock")!=path.npos){
-						string j="¼ì²âµ½Ò»¸öº¬ÓĞÆÛÕ©ÓÃ»§ĞĞÎªµÄÁ÷Ã¥³ÌĞò(Î£ÏÕµÈ¼¶ ¼«¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªå«æœ‰æ¬ºè¯ˆç”¨æˆ·è¡Œä¸ºçš„æµæ°“ç¨‹åº(å±é™©ç­‰çº§ æé«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
 					}if(path.find("ComputerZ12")!=path.npos){
-						string j="¼ì²âµ½Ò»¸öº¬ÓĞÆÛÕ©ÓÃ»§ĞĞÎªµÄÁ÷Ã¥³ÌĞò(Î£ÏÕµÈ¼¶ ¼«¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªå«æœ‰æ¬ºè¯ˆç”¨æˆ·è¡Œä¸ºçš„æµæ°“ç¨‹åº(å±é™©ç­‰çº§ æé«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
 					}
 					}if(path.find("virus")!=path.npos){
-						string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ Î´Öª)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ æœªçŸ¥)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
 					}if(path.find("filekiller")!=path.npos){
-						string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ¼«¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-						int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+						string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ æé«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+						int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 						if(ret == IDYES){
 							remove(path.c_str());
 						}
@@ -139,36 +132,36 @@ int removeDir(string dirPath){
         	    			 	in.getline (buffer,100);
         	    				string bu=buffer;
             				 	if(bu.find("shutdown")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ÖĞ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä¸­)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("kill")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ é«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("rename")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ÖĞ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä¸­)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("name")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ µÍ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä½)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("shell")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ µÍ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä½)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
@@ -182,36 +175,36 @@ int removeDir(string dirPath){
         	    			 	in.getline (buffer,100);
         	    				string bu=buffer;
             				 	if(bu.find("shutdown")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ÖĞ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä¸­)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("copy")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ µÍ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä½)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("kill")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ µÍ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä½)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("del")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ÖĞ)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ ä¸­)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
 								}
 								if(bu.find("rd")!=path.npos){
-									string j="¼ì²âµ½Ò»¸ö²¡¶¾ÎÄ¼ş(Î£ÏÕµÈ¼¶ ¸ß)£¬Â·¾¶Îª"+path+"ÊÇ·ñÉ¾³ı£¿";
-									int ret = MessageBox(NULL,j.c_str(),"Ñ¯ÎÊ-SWS°²È«ÖúÊÖ",MB_YESNO);
+									string j="æ£€æµ‹åˆ°ä¸€ä¸ªç—…æ¯’æ–‡ä»¶(å±é™©ç­‰çº§ é«˜)ï¼Œè·¯å¾„ä¸º"+path+"æ˜¯å¦åˆ é™¤ï¼Ÿ";
+									int ret = MessageBox(NULL,j.c_str(),"è¯¢é—®-SWSå®‰å…¨åŠ©æ‰‹",MB_YESNO);
 									if(ret == IDYES){
 										remove(path.c_str());
 									}
